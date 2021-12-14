@@ -1,0 +1,247 @@
+Name,Tu-95;
+modelName,Tu-95.mqo;
+modelName_texture,Tu-95.png;
+health,50;
+throttle_gearDown,5;
+gravity,0.0098f;
+throttle_AF,12;
+rudderSpeed,2;
+displayModernHud,true;
+speedfactor,0.14;
+speedfactor_af,0.0003f;
+turbine_torque,0.0003f;
+torque,0.002f;
+dragfactor_front,0.000006;
+brakedragfactor,0.005;
+stability_motion,0.07;
+stability_motion2,0;
+stability_roll,0.002;
+rotmotion_reduceSpeed,0.03;
+liftfactor,0.006;
+flapliftfactor,0.00006;
+flapdragfactor,0.00001;
+stability_roll_yaw,4;
+rotmotion_reduceSpeedYaw_sep,0.05;
+slipresist,0.0001;
+acquisition_radar,true;
+hasFlare;
+flare_Max,16;
+autoflap,true;
+
+Has_acquisition_radar,true;
+
+Script,handmadeVehicles_Packs\Std_Vehicles\scripts\MiG-31_script_global.js;
+Script_Local,handmadeVehicles_Packs\Std_Vehicles\scripts\MiG-31_script_local.js;
+
+yawspeed,0.002;
+yawspeed_ground,10;
+rollspeed,0.006;
+pitchspeed,0.008;
+off_road_followability,3;
+
+soundname,handmadevehicle:handmadevehicle.Tu-95prop;
+soundpitch,1;
+autoflap,true;
+bodyWeight,37950;
+
+maxbank,80;
+minALT,120;
+boundingBoxSizeX,2;
+boundingBoxSizeY,2;
+
+prefab_additionalBoundingBoxes_1_Num,2;
+prefab_additionalBoundingBoxes_2_Set,0,	0,1,4,	1,1,1;
+prefab_additionalBoundingBoxes_2_Set,1,	0,1,-4,	1,1,1;
+
+//武装追加;
+ParentWeapons_NUM,10;
+AllWeapons_NUM,10;
+cargoSlotNum,1;
+
+
+addParentWeapon,0,	Tu-95_Bay,	0,	2.7173,	-4	,0;
+addParentWeapon,1,	Tu-95_Bay,	0,	2.7173,	1	,0;
+addParentWeapon,2,	Tu-95_Bay,	-0.5,	2.7173,	-4	,0;
+addParentWeapon,3,	Tu-95_Bay,	-0.5,	2.7173,	1	,0;
+addParentWeapon,4,	Tu-95_Bay,	 0.5,	2.7173,	-4	,0;
+addParentWeapon,5,	Tu-95_Bay,	 0.5,	2.7173,	1	,0;
+addParentWeapon,6,	Tu-95_Bay,	-0.5,	2.7173,	6	,0;
+addParentWeapon,7,	Tu-95_Bay,	 0.5,	2.7173,	6	,0;
+addParentWeapon,8,	Tu-95_Bay,	-0.5,	2.7173,	11	,0;
+addParentWeapon,9,	Tu-95_Bay,	 0.5,	2.7173,	11	,0;
+
+
+SetCategory_SetCategoryNum,1;
+SetCategory_SetTargetCategory,0;
+SetCategory_Set_name,Gun;
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0;
+SetWeapon_FireGroupTurrets,0,0,1,2,3,4,5,6,7,8,9;
+SetWeapon_targetingGroupTurrets,0;
+SetCategory_Set_fireFromReadyAim,false;
+SetCategory_Set_sequentiallyFire,true;
+SetCategory_Set_fireInterval,10;
+SetCategory_Set_perFireNum,1;//同時に射撃発起する管制グループ数
+SetCategory_Set_userSittingTurretID,-1;//ユーザーを砲塔に座らせない
+
+
+
+//座席追加;
+SetUpSeat1_NUM,2;
+SetUpSeat2_AddSeat_Normal,0,0.3781,5.119,-8.876,true,false,false,0,-1;
+SetUpSeat4_AddSeat_AdditionalTurret,0,0;
+SetUpSeat2_AddSeat_Normal,1,0,4.557,31.22,true,false,false,-1,-1;
+camerapos,0.3781,5.119,-9.876;
+
+userProtect_maxDamageLevel,0,12;
+
+wingVapourTrailPoint_num,2;
+wingVapourTrailPoint_set,0,37.87,3.188,24.71;
+wingVapourTrailPoint_set,1,-37.87,3.188,24.71;
+wingVapourTrailStart,0.04f;
+
+thirdPersonDistance,32;
+
+Load_collision_Model,handmadeVehicles_Packs\Std_Vehicles\assets\handmadevehicle\textures\model\Tu-95_collider.mqo;
+boxes_withInfo_simple,1,
+0,9.871,  14.60, 	 75.7440,15.7633,71.0372;
+
+boxes_setCollisionParts,0,body;
+
+boxes_setArmor,0,7;
+
+
+AddParts,body;
+	AddPartsRotationCenterAndRotationAmount,0,0,0,0,0,0;
+	RenderOnNormal;
+	SetAsNormalParts;
+	AddChildParts,canopi;
+		RenderOnNormal;
+		SetAsNormalParts;
+	BackParts;
+
+	AddChildParts,cGear;
+		RenderOnNormal;
+		SetAsNormalParts;
+		AddPartsRotationCenterAndRotationAmount_TypeVector, 0, 2.7173, 9.7381 , 1 , 0 , 0 , 0;
+		AddSomeMotion,-1,false       	,1,7;
+		AddSomeMotion,1,0,0,0,120,0,0        	,100,0,0,0,0,0,0	,7;
+	BackParts;
+	AddChildParts,gear1;
+		RenderOnNormal;
+		SetAsNormalParts;
+		AddPartsRotationCenterAndRotationAmount_TypeVector, 0, 3.179, -4.254 , 1, 0, 0 , 0;
+		AddSomeMotion,-1,false       	,1,7;
+		AddSomeMotion,1,0,0.5,0,85,0,0        	,30,0,0.5,0,85,0,0   ,7;
+		AddSomeMotion,30,0,0.5,0,85,0,0        	,100,0,0,0,0,0,0	,7;
+		AddChildParts,gear2;
+			RenderOnNormal;
+			SetAsNormalParts;
+			AddPartsRotationCenterAndRotationAmount_TypeVector, 0, 0.8131, -4.247 , 1, 0, 0 , 0;
+			AddSomeMotion,-1,false       	,1,7;
+			AddSomeMotion,1,0,0,0,95,0,0        	,50,0,0,0,95,0,0	,7;
+			AddSomeMotion,50,0,0,0,95,0,0        	,100,0,0,0,0,0,0	,7;
+		BackParts;
+	BackParts;
+	
+	
+
+	AddChildParts,prop1;
+		RenderOnNormal;
+		SetAsNormalParts;
+		
+		AddChildParts,prop1right;
+			RenderOnNormal;
+			SetAsNormalParts;
+			AddPartsRotationCenterAndRotationAmount_TypeVector, 12.33, 3.649, 2.069 , 0,0,1,0;
+
+			IsPera,true;
+			AddPartsRenderAsTrackInf,0,0,0,2880,0,0;
+		BackParts;
+		
+		AddChildParts,prop1left;
+			RenderOnNormal;
+			SetAsNormalParts;
+			AddPartsRotationCenterAndRotationAmount_TypeVector, 12.33, 3.649, 2.069 , 0,0,1,0;
+
+			IsPera,true;
+			AddPartsRenderAsTrackInf,0,0,0,-2880,0,0;
+		BackParts;
+	BackParts;
+
+
+
+	AddChildParts,prop2;
+		RenderOnNormal;
+		SetAsNormalParts;
+		
+		AddChildParts,prop2right;
+			RenderOnNormal;
+			SetAsNormalParts;
+			AddPartsRotationCenterAndRotationAmount_TypeVector, 6.461, 3.649, 4.182 , 0,0,1,0;
+
+			IsPera,true;
+			AddPartsRenderAsTrackInf,0,0,0,2880,0,0;
+		BackParts;
+		
+		AddChildParts,prop2left;
+			RenderOnNormal;
+			SetAsNormalParts;
+			AddPartsRotationCenterAndRotationAmount_TypeVector, 6.461, 3.649, 4.182 , 0,0,1,0;
+
+			IsPera,true;
+			AddPartsRenderAsTrackInf,0,0,0,-2880,0,0;
+		BackParts;
+	BackParts;
+
+
+
+	AddChildParts,prop3;
+		RenderOnNormal;
+		SetAsNormalParts;
+		
+		AddChildParts,prop3right;
+			RenderOnNormal;
+			SetAsNormalParts;
+			AddPartsRotationCenterAndRotationAmount_TypeVector, -6.461, 3.649, 4.182 , 0,0,1,0;
+
+			IsPera,true;
+			AddPartsRenderAsTrackInf,0,0,0,2880,0,0;
+		BackParts;
+		
+		AddChildParts,prop3left;
+			RenderOnNormal;
+			SetAsNormalParts;
+			AddPartsRotationCenterAndRotationAmount_TypeVector, -6.461, 3.649, 4.182 , 0,0,1,0;
+
+			IsPera,true;
+			AddPartsRenderAsTrackInf,0,0,0,-2880,0,0;
+		BackParts;
+	BackParts;
+
+
+
+	AddChildParts,prop4;
+		RenderOnNormal;
+		SetAsNormalParts;
+		
+		AddChildParts,prop4right;
+			RenderOnNormal;
+			SetAsNormalParts;
+			AddPartsRotationCenterAndRotationAmount_TypeVector, -12.33, 3.649, 2.069 , 0,0,1,0;
+
+			IsPera,true;
+			AddPartsRenderAsTrackInf,0,0,0,2880,0,0;
+		BackParts;
+		
+		AddChildParts,prop4left;
+			RenderOnNormal;
+			SetAsNormalParts;
+			AddPartsRotationCenterAndRotationAmount_TypeVector, -12.33, 3.649, 2.069 , 0,0,1,0;
+
+			IsPera,true;
+			AddPartsRenderAsTrackInf,0,0,0,-2880,0,0;
+		BackParts;
+	BackParts;
+BackParts;
+End;

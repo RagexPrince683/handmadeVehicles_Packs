@@ -1,0 +1,406 @@
+Name,Su-33;
+modelName,su-33.mqo;
+modelName_texture,su-33.png;
+health,50;
+throttle_gearDown,5;
+gravity,0.0098f;
+throttle_AF,9.0;
+rudderSpeed,8;
+displayModernHud,true;
+speedfactor,0.37;
+speedfactor_af,0.0005f;
+turbine_torque,0.0002f;
+torque,0.0004f;
+dragfactor_front,0.000005;
+stability_motion,0.2;
+stability_motion3,0.0;
+stability_motion2,0.0;
+stability_roll,0.003;
+rotmotion_reduceSpeed,0.01;
+liftfactor,0.006;
+flapliftfactor,0.000035;
+flapdragfactor,0.000001;
+slipresist,0.2;
+max_pera_trackPos,1;
+cargoSlotNum,1;
+
+yawspeed,0.013;
+yawspeed_ground,30;
+rollspeed,0.035;
+pitchspeed,0.017;
+off_road_followability,3;
+acquisition_radar,true;
+hasFlare;
+flare_Max,32;
+
+Has_acquisition_radar,true;
+
+Script,handmadeVehicles_Packs\Std_Vehicles\scripts\Su-33_script_global.js;
+Script_Local,handmadeVehicles_Packs\Std_Vehicles\scripts\Su-33_script_local.js;
+
+soundname,handmadevehicle:handmadevehicle.jetplane;
+soundpitch,1.7;
+autoflap,false;
+bodyWeight,29940;
+
+maxbank,80;
+minALT,120;
+boundingBoxSizeX,2;
+boundingBoxSizeY,2;
+
+//武装追加;
+ParentWeapons_NUM,12;
+AllWeapons_NUM,12;
+cargoSlotNum,1;
+
+addParentWeapon,0,	Gsh-30-1,-1.234,3.144,-3.647,0;
+addParentWeapon,1,	Su27-HardPoint,	0,		2.092,		1.412,0;
+addParentWeapon,2,	Su27-HardPoint,	0,		2.092,		1.412,0;
+addParentWeapon,3,	Su27-HardPoint,	1.349,		0.99,		3.855,0;
+addParentWeapon,4,	Su27-HardPoint,	-1.349,		0.99,		3.855,0;
+addParentWeapon,5,	Su27-HardPoint,	4.172,		2.330,		5.410,0;
+addParentWeapon,6,	Su27-HardPoint,	-4.172,		2.330,		5.410,0;
+
+//外側は軽めのヤツだけ;
+addParentWeapon,7,	MiG31-HardPoint-3,	5.563,	2.330,		6.346,0;
+addParentWeapon,8,	MiG31-HardPoint-3,	-5.563,	2.330,		6.346,0;
+addParentWeapon,9,	MiG31-HardPoint-3,	7.782,	2.330,		7.482,0;
+addParentWeapon,10,	MiG31-HardPoint-3,	-7.782,	2.330,		7.482,0;
+
+addParentWeapon,11,	Su-57_Radar,		0,		2.892,	-8.544,0;
+
+SetCategory_SetCategoryNum,11;
+SetCategory_SetTargetCategory,0;//30mm;
+SetCategory_Set_name,Gun;
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0,11;
+SetWeapon_FireGroupTurrets,0,0;
+SetWeapon_targetingGroupTurrets,0,11;
+SetCategory_Set_CriterionTurret,11;
+
+SetCategory_SetTargetCategory,1;//missile;
+SetCategory_Set_name,pylon_1;
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0,11;
+SetWeapon_FireGroupTurrets,0,1;
+SetWeapon_targetingGroupTurrets,0,11;
+SetCategory_Set_CriterionTurret,11;
+
+SetCategory_SetTargetCategory,2;//missile;
+SetCategory_Set_name,pylon_2;
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0,11;
+SetWeapon_FireGroupTurrets,0,2;
+SetWeapon_targetingGroupTurrets,0,11;
+SetCategory_Set_CriterionTurret,11;
+
+SetCategory_SetTargetCategory,3;//missile;
+SetCategory_Set_name,pylon_3;
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0,11;
+SetWeapon_FireGroupTurrets,0,3;
+SetWeapon_targetingGroupTurrets,0,11;
+SetCategory_Set_CriterionTurret,11;
+
+SetCategory_SetTargetCategory,4;//missile;
+SetCategory_Set_name,pylon_4;
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0,11;
+SetWeapon_FireGroupTurrets,0,4;
+SetWeapon_targetingGroupTurrets,0,11;
+SetCategory_Set_CriterionTurret,11;
+
+SetCategory_SetTargetCategory,5;//missile;
+SetCategory_Set_name,pylon_5;
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0,11;
+SetWeapon_FireGroupTurrets,0,5;
+SetWeapon_targetingGroupTurrets,0,11;
+SetCategory_Set_CriterionTurret,11;
+
+SetCategory_SetTargetCategory,6;//missile;
+SetCategory_Set_name,pylon_6;
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0,11;
+SetWeapon_FireGroupTurrets,0,6;
+SetWeapon_targetingGroupTurrets,0,11;
+SetCategory_Set_CriterionTurret,11;
+
+SetCategory_SetTargetCategory,7;//missile;
+SetCategory_Set_name,pylon_7;
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0,11;
+SetWeapon_FireGroupTurrets,0,7;
+SetWeapon_targetingGroupTurrets,0,11;
+SetCategory_Set_CriterionTurret,11;
+
+SetCategory_SetTargetCategory,8;//missile;
+SetCategory_Set_name,pylon_8;
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0,11;
+SetWeapon_FireGroupTurrets,0,8;
+SetWeapon_targetingGroupTurrets,0,11;
+SetCategory_Set_CriterionTurret,11;
+
+SetCategory_SetTargetCategory,9;//missile;
+SetCategory_Set_name,pylon_9;
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0,11;
+SetWeapon_FireGroupTurrets,0,9;
+SetWeapon_targetingGroupTurrets,0,11;
+SetCategory_Set_CriterionTurret,11;
+
+SetCategory_SetTargetCategory,10;//missile;
+SetCategory_Set_name,pylon_10;
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0,11;
+SetWeapon_FireGroupTurrets,0,10;
+SetWeapon_targetingGroupTurrets,0,11;
+SetCategory_Set_CriterionTurret,11;
+
+
+//座席追加;
+SetUpSeat1_NUM,1;
+SetUpSeat2_AddSeat_Normal,0,0,3.344,-3.378,true,false,false,1,0;
+SetUpSeat4_AddSeat_AdditionalTurret,0,	1,2,3,4,5,6;
+
+camerapos,0,3.344,-3.378;
+userProtect_maxDamageLevel,0,12;
+
+wingVapourTrailPoint_num,2;
+wingVapourTrailPoint_set,0,5.881,2.200,4.963;
+wingVapourTrailPoint_set,1,-5.881,2.200,4.963;
+wingVapourTrailStart,0.08f;
+
+thirdPersonDistance,32;
+
+Load_collision_Model,handmadeVehicles_Packs\Std_Vehicles\assets\handmadevehicle\textures\model\su-33_col.mqo;
+
+boxes_withInfo_simple,1,
+0,3.437,0.005872,		17.2938,6.8634,25.8705;
+
+boxes_setCollisionParts,0,obj1;
+
+boxes_setArmor,0,8;
+//座席;
+SetUpSeat1_NUM,1;
+SetUpSeat2_AddSeat_Normal,0,0,4.230,-5.909,false,false,false,1,0;
+SetUpSeat4_AddSeat_AdditionalTurret,0,	1,2,3,4,5,6,7,8,9,10;
+camerapos,0,4.230,-6.409;
+
+//パーツ追加;
+AddParts,main;
+	AddPartsRotationCenterAndRotationAmount,0,0,0,0,0,0;
+	RenderOnNormal;
+	SetAsNormalParts;
+	AddChildParts,canopy1;
+		RenderOnNormal;
+		SetAsNormalParts;
+	BackParts;
+	AddChildParts,canopy2;
+		RenderOnNormal;
+		SetAsNormalParts;
+	BackParts;
+	AddChildParts,other;
+		RenderOnNormal;
+		SetAsNormalParts;
+	BackParts;
+	AddChildParts,hook;
+		RenderOnNormal;
+		SetAsNormalParts;
+	BackParts;
+
+	AddChildParts,lg_l0;
+		RenderOnNormal;
+		SetAsNormalParts;
+		AddPartsRotationCenterAndRotationAmount_TypeVector, 2.2490, 0.00, -4.3387 , 0 , 1 , 0 , 0;
+		//AddSomeMotion,-1,0,0,0,-17,0,0       	,1,0,0,0,-17,0,0,7;
+		AddSomeMotion,0,0,0,0,-14,0,0        	,15,0,0,0,-8,0,0	,7;
+		AddSomeMotion,15,0,0,0,-8,0,0        	,35,0,0,0,0,0,0	,7;
+		AddSomeMotion,35,0,0,0,0,0,0        	,100,0,0,0,0,0,0	,7;
+
+		AddChildParts,lg_l1;
+			RenderOnNormal;
+			SetAsNormalParts;
+			
+			AddPartsRotationCenterAndRotationAmount_TypeVector, 2.2490, 2.6878, -4.17 , 1 , 0 , 0 , 0;
+			//AddSomeMotion,-1,0,0,0,-92,0,0       	,1,0,0,0,-92,0,0,7;
+			AddSomeMotion,0,0,0,0,-92,0,0        	,15,0,0,0,-92,0,0	,7;
+			AddSomeMotion,15,0,0,0,-92,0,0        	,100,0,0,0,0,0,0	,7;
+		AddChildParts,lg_l2;
+			RenderOnNormal;
+			SetAsNormalParts;
+			
+			AddPartsRotationCenterAndRotationAmount_TypeVector, 2.2490, 2.6878, -4.3387 , 0 , 1 , 0 , 0;
+			//AddSomeMotion,-1,0,0,0,0,0,0       	,1,0,0,0,0,0,0,7;
+			AddSomeMotion,0,0,0,0,-90,0,0        	,15,0,0,0,-90,0,0	,7;
+			AddSomeMotion,15,0,0,0,-90,0,0        	,35,0,0,0,-45,0,0	,7;
+			AddSomeMotion,35,0,0,0,-45,0,0        	,50,0,0,0,0,0,0	,7;
+			AddSomeMotion,50,0,0,0,0,0,0        	,100,0,0,0,0,0,0	,7;
+
+		BackParts;
+		BackParts;
+	BackParts;
+
+	AddChildParts,lg_r0;
+		RenderOnNormal;
+		SetAsNormalParts;
+		AddPartsRotationCenterAndRotationAmount_TypeVector, -2.2490, 0.00, -4.3387 , 0 , -1 , 0 , 0;
+		//AddSomeMotion,-1,0,0,0,-17,0,0       	,1,0,0,0,-17,0,0,7;
+		AddSomeMotion,0,0,0,0,-14,0,0        	,15,0,0,0,-8,0,0	,7;
+		AddSomeMotion,15,0,0,0,-8,0,0        	,35,0,0,0,0,0,0	,7;
+		AddSomeMotion,35,0,0,0,0,0,0        	,100,0,0,0,0,0,0	,7;
+
+
+		AddChildParts,lg_r1;
+			RenderOnNormal;
+			SetAsNormalParts;
+			
+			AddPartsRotationCenterAndRotationAmount_TypeVector, -2.2490, 2.6878, -4.17 , 1 , 0 , 0 , 0;
+			//AddSomeMotion,-1,0,0,0,-92,0,0       	,1,0,0,0,-92,0,0,7;
+			AddSomeMotion,0,0,0,0,-92,0,0        	,15,0,0,0,-92,0,0	,7;
+			AddSomeMotion,15,0,0,0,-92,0,0        	,100,0,0,0,0,0,0	,7;
+		AddChildParts,lg_r2;
+			RenderOnNormal;
+			SetAsNormalParts;
+			
+			AddPartsRotationCenterAndRotationAmount_TypeVector, -2.2490, 2.6878, -4.3387 , 0 , -1 , 0 , 0;
+			//AddSomeMotion,-1,0,0,0,0,0,0       	,1,0,0,0,0,0,0,7;
+			AddSomeMotion,0,0,0,0,-90,0,0        	,15,0,0,0,-90,0,0	,7;
+			AddSomeMotion,15,0,0,0,-90,0,0        	,35,0,0,0,-45,0,0	,7;
+			AddSomeMotion,35,0,0,0,-45,0,0        	,50,0,0,0,0,0,0	,7;
+			AddSomeMotion,50,0,0,0,0,0,0        	,100,0,0,0,0,0,0	,7;
+
+		BackParts;
+		BackParts;
+	BackParts;
+
+	AddChildParts,lg_f0;
+			RenderOnNormal;
+			SetAsNormalParts;
+			
+			AddPartsRotationCenterAndRotationAmount_TypeVector, 0.00, 2.7674, 2.8262 , 1 , 0 , 0 , 0;
+			//AddSomeMotion,-1,0,0,0,95,0,0       	,1,0,0,0,95,0,0,7;
+			AddSomeMotion,0,0,0,0,0,0,0        	,20,0,0,0,0,0,0	,7;
+			AddSomeMotion,20,0,0,0,0,0,0        	,100,0,0,0,95,0,0	,7;
+
+				AddChildParts,obj1;
+				RenderOnNormal;
+				SetAsNormalParts;
+				BackParts;
+			BackParts;
+
+		AddChildParts,lg_f1;
+			RenderOnNormal;
+			SetAsNormalParts;
+			
+			AddPartsRotationCenterAndRotationAmount_TypeVector, 0.00, 2.4747, 1.2852 , 1 , 0 , 0 , 0;
+			//AddSomeMotion,-1,0,0,0,28,0,0       	,1,0,0,0,28,0,0,7;
+			AddSomeMotion,0,0,0,0,0,0,0        	,20,0,0,0,0,0,0	,7;
+			AddSomeMotion,20,0,0,0,0,0,0        	,100,0,0,0,28,0,0	,7;
+
+			AddChildParts,lg_f2;
+			RenderOnNormal;
+			SetAsNormalParts;
+			
+			AddPartsRotationCenterAndRotationAmount_TypeVector, 0.00, 0, 0 , 1 , 0 , 0 , 0;
+			AddSomeMotion,-1,0,0,-1,0,0,0       	,1,0,0,-1,0,0,0,7;
+
+			AddSomeMotion,0,0,0,0,0,0,0        	,20,0,0,0,0,0,0	,7;
+			AddSomeMotion,20,0,0,0,0,0,0        	,53,0,0,-0.2,0,0,0	,7;
+			AddSomeMotion,53,0,0,-0.2,0,0,0	        	,86,0,0,-0.5,0,0,0	,7;
+			AddSomeMotion,86,0,0,-0.5,0,0,0	        	,100,0,0,-1,0,0,0	,7;
+
+			BackParts;
+		BackParts;
+
+	AddChildParts,lgc_0;
+			RenderOnNormal;
+			SetAsNormalParts;
+			
+			AddPartsRotationCenterAndRotationAmount_TypeVector, -0.3099, 2.5000, 4.223 , 0 , -0.0705555555555556 , 0.9294444444444444 , 0;
+			//AddSomeMotion,-1,0,0,0,-100,0,0       	,1,0,0,0,-100,0,0,7;
+			AddSomeMotion,0,0,0,0,0,0,0        	,20,0,0,0,-100,0,0	,7;
+			AddSomeMotion,20,0,0,0,-100,0,0        	,100,0,0,0,-100,0,0	,7;
+	BackParts;
+
+	AddChildParts,lgcl_0;
+			RenderOnNormal;
+			SetAsNormalParts;
+			
+			AddPartsRotationCenterAndRotationAmount_TypeVector, 2.619, 2.880, -4.408 , -2.005555555555556 , -0.0091555555555556 , 41.8098444444444444 , 0;
+			//AddSomeMotion,-1,0,0,0,-100,0,0       	,1,0,0,0,-100,0,0,7;
+			AddSomeMotion,0,0,0,0,0,0,0        	,15,0,0,0,60,0,0	,7;
+			AddSomeMotion,15,0,0,0,60,0,0        	,100,0,0,0,60,0,0	,7;
+	BackParts;
+
+	AddChildParts,lgcl_1;
+			RenderOnNormal;
+			SetAsNormalParts;
+			
+			AddPartsRotationCenterAndRotationAmount_TypeVector, 2.737, 2.881, -1.919 , -4.705555555555556 , -0.0201555555555556 , 41.8098444444444444 , 0;
+			//AddSomeMotion,-1,0,0,0,-100,0,0       	,1,0,0,0,-100,0,0,7;
+			AddSomeMotion,0,0,0,0,0,0,0        	,15,0,0,0,105,0,0	,7;
+			AddSomeMotion,15,0,0,0,105,0,0        	,100,0,0,0,105,0,0	,7;
+	BackParts;
+
+	AddChildParts,lgcr_0;
+			RenderOnNormal;
+			SetAsNormalParts;
+			
+			AddPartsRotationCenterAndRotationAmount_TypeVector, -2.619, 2.880, -4.408 , 2.005555555555556 , -0.0091555555555556 , 41.8098444444444444 , 0;
+			//AddSomeMotion,-1,0,0,0,-100,0,0       	,1,0,0,0,-100,0,0,7;
+			AddSomeMotion,0,0,0,0,0,0,0        	,20,0,0,0,-60,0,0	,7;
+			AddSomeMotion,20,0,0,0,-60,0,0        	,100,0,0,0,-60,0,0	,7;
+	BackParts;
+
+	AddChildParts,lgcr_1;
+			RenderOnNormal;
+			SetAsNormalParts;
+			
+			AddPartsRotationCenterAndRotationAmount_TypeVector, -2.737, 2.881, -1.919 , 4.705555555555556 , -0.0201555555555556 , 41.8098444444444444 , 0;
+			//AddSomeMotion,-1,0,0,0,-100,0,0       	,1,0,0,0,-100,0,0,7;
+			AddSomeMotion,0,0,0,0,0,0,0        	,15,0,0,0,-105,0,0	,7;
+			AddSomeMotion,15,0,0,0,-105,0,0        	,100,0,0,0,-105,0,0	,7;
+	BackParts;
+
+	AddChildParts,airbrake;
+			RenderOnNormal;
+			SetAsNormalParts;
+			
+			AddPartsRotationCenterAndRotationAmount_TypeVector, 0, 4.0775, 1.3574 , 1 , 0 , 0 , 0;
+			//AddSomeMotion,-1,0,0,0,-100,0,0       	,1,0,0,0,-100,0,0,12;
+			AddSomeMotion,0,0,0,0,0,0,0        	,20,0,0,0,35,0,0	,12;
+
+	BackParts;
+
+	AddChildParts,obj7;
+			RenderOnNormal;
+			SetAsNormalParts;
+			
+			AddPartsRotationCenterAndRotationAmount_TypeVector, 0, 3.5005, -2.2558 , 1 , 0 , 0 , 0;
+			//AddSomeMotion,-1,0,0,0,-100,0,0       	,1,0,0,0,-100,0,0,12;
+			AddSomeMotion,0,0,0,0,-10,0,0        	,10,0,0,0,-32,0,0	,12;
+			AddSomeMotion,10,0,0,0,-32,0,0        	,20,0,0,0,-41,0,0	,12;
+
+			AddChildParts,obj2;
+				RenderOnNormal;
+				SetAsNormalParts;
+			
+				AddPartsRotationCenterAndRotationAmount_TypeVector, 0, 0, 0 , 1 , 0 , 0 , 0;
+				//AddSomeMotion,-1,0,0,0,-100,0,0       	,1,0,0,0,-100,0,0,12;
+				AddSomeMotion,0,0,0,0,0,0,0        	,5,0,0,0.1,0,0,0	,12;
+				AddSomeMotion,5,0,0,0.1,0,0,0        	,10,0,0,0.3,0,0,0	,12;
+				AddSomeMotion,10,0,0,0.3,0,0,0        	,15,0,0,0.45,0,0,0	,12;
+				AddSomeMotion,15,0,0,0.45,0,0,0        	,20,0,0,0.7,0,0,0	,12;
+		BackParts;
+	BackParts;
+
+BackParts;
+
+
+
+SpawnByMob_Soldier,Su-33,3;
+
+
+End;

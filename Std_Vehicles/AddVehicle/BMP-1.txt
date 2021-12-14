@@ -1,0 +1,211 @@
+Name,BMP-1;
+rotcenter,0,1,0;
+modelName,BMP-1.mqo;
+modelName_texture,BMP-1.png;
+health,350;
+draft,1.2;
+molded_depth,1.25;
+floatOnWater,true;
+soundname,handmadevehicle:handmadevehicle.BMPTrack;
+soundpitch,1;
+LandPreset;
+TankPreset;
+max_rudder_effect,0.05;
+soundpitch,1;
+throttle_Max,4;
+throttle_min,-4;
+yawspeed_ground,32;
+yawspeed_Inwater,0.4;
+speedfactor,0;
+speedfactor_af,0;
+forced_rudder_effect_OnGround,0;
+rotmotion_reduceSpeed,0.1;
+bodyWeight,32000;
+recoilResist,1700;
+slipresist_onground,0.2;
+dragfactor_inwater,0.0001;
+dragfactor_front,0;
+
+speedfactor_onGround,0.14;
+speedfactor_inWater,0.08;
+powerPos_Inwater,0,1,0;
+torque_ground,0.5;
+turbine_torque_inWater,0.004;
+rotmotion_reduceSpeed,0.1;
+rotmotion_reduceSpeed_inWater,0.00;
+rotmotion_reduceSpeedYaw_inWater,0.004;
+rotmotion_reduceSpeedPitch_inWater,0.0001;
+rotmotion_reduceSpeedRoll_inWater,0.0001;
+stability_roll_inWater,0.01;
+stability_motion_inwater,0.7;
+slipresist_inwater,0.07;
+off_road_followability_inwater,0.2f;
+off_road_followability_inwater_roll,0.2;
+
+Script,handmadeVehicles_Packs\Std_Vehicles\scripts\BMP-1_script_global.js;
+
+//武装追加;
+ParentWeapons_NUM,1;
+AllWeapons_NUM,4;
+addParentWeapon,0,	73mm_2A28	,0,0,0,1,1;
+	addBarrelChildWeapon,0,PKM,-0.1130,1.783,-1.083,0;
+Set_CurrentTurret_to_Mother;
+	addChildWeapon,0,ATGM-OnBMP-1,0,0,0,0,1;
+		addBarrelChildWeapon,0,BMP_HardPoint_ATM,-0.3887,2.6855,0.7246,0;
+
+
+SetCategory_SetCategoryNum,3;
+SetCategory_SetTargetCategory,0;//73mm
+SetCategory_Set_name,73mm_2A28;
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0,0;
+SetWeapon_FireGroupTurrets,0,0;
+SetWeapon_targetingGroupTurrets,0;
+SetCategory_Set_fireFromReadyAim,false;
+SetCategory_Set_sequentiallyFire,false;
+SetCategory_Set_fireInterval,0;//最大速度連射
+SetCategory_Set_perFireNum,1;//同時に射撃発起する管制グループ数
+SetCategory_Set_userSittingTurretID,0;//ユーザーを砲塔に座らせる
+SetCategory_Set_name,MainGun;
+
+SetCategory_SetTargetCategory,1;//同軸機銃
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0;//照準しない
+SetWeapon_FireGroupTurrets,0,1;//PKM
+SetWeapon_targetingGroupTurrets,0;//
+SetCategory_Set_fireFromReadyAim,false;
+SetCategory_Set_sequentiallyFire,false;
+SetCategory_Set_fireInterval,0;//最大速度連射
+SetCategory_Set_perFireNum,1;//同時に射撃発起する管制グループ数
+SetCategory_Set_userSittingTurretID,-1;//ユーザーを砲塔に座らせない
+SetCategory_Set_name,SubGun;
+
+SetCategory_SetTargetCategory,2;//ATM
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0,0,2;//2A28 & ATM_Missile
+SetWeapon_FireGroupTurrets,0,3;// ATM_Missile
+SetWeapon_targetingGroupTurrets,0,3;// ATM_Missile
+SetCategory_Set_fireFromReadyAim,false;
+SetCategory_Set_sequentiallyFire,false;
+SetCategory_Set_fireInterval,0;//最大速度連射
+SetCategory_Set_perFireNum,1;//同時に射撃発起する管制グループ数
+SetCategory_Set_userSittingTurretID,0;//ユーザーを砲塔に座らせる
+SetCategory_Set_name,SubGun;
+
+
+//座席追加;
+SetUpSeat1_NUM,5;
+SetUpSeat2_AddSeat_Normal,	0 , 0.1745	,2.717	,	0	,	true,true,false,true,0,1;
+SetUpSeat3_AddSeat_Zoom,	0 , 0.3		,2.026	,	-0.8366	,	true,true,false,true,0,1;
+SetUpSeat4_AddSeat_AdditionalTurret,0,	0,2;
+SetUpSeat2_AddSeat_Normal, 	1 , -0.3870	,2.163	,	1	,	false,false,false,-1,-1;
+SetUpSeat2_AddSeat_Normal, 	2 , 0.3870	,2.163	,	1	,		false,false,false,-1,-1;
+SetUpSeat2_AddSeat_Normal, 	3 , -0.3245	,2.163	,	1.5	,		false,false,false,-1,-1;
+SetUpSeat2_AddSeat_Normal, 	4 , 0.3245	,2.163	,	1.5	,		false,false,false,-1,-1;
+
+userProtect_maxDamageLevel,0,-1;
+userProtect_maxDamageLevel,1,20;
+userProtect_maxDamageLevel,2,20;
+userProtect_maxDamageLevel,3,20;
+userProtect_maxDamageLevel,4,20;
+
+//top,bottom,front,back,left,right;
+Load_collision_Model,handmadeVehicles_Packs\Std_Vehicles\assets\handmadevehicle\textures\model\BMP-1_collider.mqo;
+
+boxes_withInfo_simple,3,
+-0.4800,1.863,-1.731,		1.96,0.1,0.81,
+0,2.027,-0.07351,	1.8221,0.3498,1.9831,
+0,1.110,-0.7394,	3.22,1.49,7.39;
+
+boxes_setCollisionParts,0,exhaust;
+boxes_setCollisionParts,1,Turret;
+boxes_setCollisionParts,2,Chassis;
+
+boxes_setArmor,0,20;
+boxes_setArmor,1,30;
+boxes_setArmor,2,25;
+
+max_pera_trackPos,60;
+cargoSlotNum,18;
+
+AddParts,Chassis;
+	SetAsNormalParts;
+BackParts;
+AddParts,bodyL;
+	SetAsNormalParts;
+BackParts;
+AddParts,Roller;
+	SetAsNormalParts;
+BackParts;
+AddParts,Doors;
+	SetAsNormalParts;
+BackParts;
+
+AddParts,Track;
+	SetAsNormalParts;
+	AddPartsRotationCenterAndRotationAmount,0,0,0,0,0,0;
+	AddCrawlerTrack_trackAnimSpeed,24;
+	AddCrawlerTrack=true,
+0.1672,0,
+	
+0.0041/-1.5702 ,
+0.0736/-1.7840 ,
+0.5988/-2.7265 ,
+0.8127/-2.7960 ,
+1.0265/-2.7265 ,
+1.1587/-2.5446 ,
+1.1756/3.2071  ,
+1.0698/3.3526  ,
+0.8988/3.4082  ,
+0.7277/3.3526  ,
+0.0736/2.5318  ,
+0.0041/2.3179;
+
+AddParts,Turret;
+	SetAsNormalParts;
+	TurretParts,0;
+	AddPartsRotationCenterAndRotationAmount,0,0,-0.05131,0,0,0;
+	RenderOnNormal;
+	AddPartsOnADSOffsetAndRotation,0,0,0,0,0,0;
+	AddPartsOnRecoilOffsetAndRotation,0,0,0,0,0,0;
+	AddPartsOnCockOffsetAndRotation,0,0,0,0,0,0;
+	AddPartsOnReloadOffsetAndRotation,0,0,0,0,0,0;
+	AddYawInfoKey,-360,0,0,0,0,-360,0        ,360,0,0,0,0,360,0;
+	AddChildParts,Turret_Cannon;
+		AddPartsRotationCenterAndRotationAmount,0,2.066,0.8688,0,0,0;
+		TurretParts,0;
+		RenderOnNormal;
+		AddPartsOnADSOffsetAndRotation,0,0,0,0,0,0;
+		AddPartsOnRecoilOffsetAndRotation,0,0,0,0,0,0;
+		AddPartsOnCockOffsetAndRotation,0,0,0,0,0,0;
+		AddPartsOnReloadOffsetAndRotation,0,0,0,0,0,0;
+		AddPitchInfoKey,-360,0,0,0,-360,0,0        ,360,0,0,0,360,0,0;
+	BackParts;
+	
+	AddChildParts,MissileCaridge;
+		SetAsNormalParts;
+		TurretParts,2;
+		AddPartsRotationCenterAndRotationAmount,-0.3939,2.460,-0.1690,0,0,0;
+		AddYawInfoKey,-360,0,0,0,0,-360,0        ,360,0,0,0,0,360,0;
+		AttachScript;
+
+		AddChildParts,MissileRail;
+			TurretParts,2;
+			SetAsNormalParts;
+			AddPartsRotationCenterAndRotationAmount,-0.3939,2.576,-0.09409,0,0,0;
+			AddPitchInfoKey,-360,0,0,0,-360,0,0        ,360,0,0,0,360,0,0;
+			AttachScript;
+			
+			AddChildParts,Missile;
+				SetAsNormalParts;
+				TurretParts,3;
+				isTurret_linkedGunMount;
+				AttachScript;
+			BackParts;
+		BackParts;
+	BackParts;
+BackParts;
+
+SpawnByMob_Soldier,BMP-1,15;
+
+End;

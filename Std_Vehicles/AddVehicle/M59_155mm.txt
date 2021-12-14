@@ -1,0 +1,125 @@
+Name,M59_155mm;
+rotcenter,0,0,0;
+modelName,M59_155mm.mqo;
+modelName_texture,M59_155mm.png;
+health,100;
+soundname,handmadevehicle:handmadevehicle.nulls;
+LandPreset;
+TankPreset;
+soundpitch,1;
+throttle_Max,3;
+throttle_min,-1;
+yawspeed_ground,1;
+speedfactor,0;
+speedfactor_af,0;
+speedfactor_onGround,0.01;
+torque_ground,1;
+rotmotion_reduceSpeed,0.8;
+forced_rudder_effect_OnGround,0.2;
+recoilResist,200000;
+//武装追加;
+ParentWeapons_NUM,1;
+AllWeapons_NUM,1;
+addParentWeapon,0,M59_155mm,0,0,0,0,1;
+
+
+SetCategory_SetCategoryNum,2;//せっかくなので照準と射撃を分ける
+SetCategory_SetTargetCategory,0;//照準
+SetCategory_Set_name,MainGunAim;
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0,0;
+SetWeapon_FireGroupTurrets,0;
+SetWeapon_targetingGroupTurrets,0;
+
+SetCategory_SetTargetCategory,1;//射撃
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0;//照準しない
+SetWeapon_FireGroupTurrets,0,0;//
+SetWeapon_targetingGroupTurrets,0;//
+SetCategory_Set_fireFromReadyAim,false;
+SetCategory_Set_sequentiallyFire,false;
+SetCategory_Set_fireInterval,0;//最大速度連射
+SetCategory_Set_perFireNum,1;//同時に射撃発起する管制グループ数
+SetCategory_Set_userSittingTurretID,-1;//ユーザーを砲塔に座らせない
+SetCategory_Set_name,MainGunFire;
+
+
+//座席追加;
+SetUpSeat1_NUM,3;
+SetUpSeat2_AddSeat_Normal,0,-1.669,1.767,3.062,true,-1,-1;
+SetUpSeat2_AddSeat_Normal,1,0.8128,1.7069,1.0853,false,0,-1;
+SetUpSeat3_AddSeat_Zoom,1,0.4024,1.6940,-0.3669,false,0,-1;
+SetUpSeat2_AddSeat_Normal,2,1.669,1.767,3.062,true,1,-1;
+
+
+max_pera_trackPos,6;
+
+zoomLevel,0,4;
+
+userProtect_maxDamageLevel,0,0;
+userProtect_maxDamageLevel,1,0;
+userProtect_maxDamageLevel,2,0;
+//top,bottom,front,back,left,right;
+boxes_withInfo,4,
+0,0.8,0,	0,0.8,0,	1.8,1.2,3.75,	1,0,0,0,		20,40,90,25,100,100,-1,
+0,1.5,0,	0,0.8,0,	1,1.0,2,	1,0,0,0,		20,40,90,25,100,100,-1,
+1.4,0.625,3,	0,0,3,		0.8,1.25,6,	0,1,0,0.174533,		20,40,90,25,50,50,-1,
+-1.4,0.625,3,	0,0,3,		0.8,1.25,6,	0,1,0,-0.174533,		20,40,90,25,50,50,-1,
+
+cargoSlotNum,4;
+
+
+addDropItem,1,0.4,minecraft:emerald_block;
+addDropItem,1,0.4,minecraft:emerald_block;
+addDropItem,1,0.4,minecraft:emerald_block;
+addDropItem,1,0.8,minecraft:iron_block;
+addDropItem,1,0.8,minecraft:iron_block;
+addDropItem,1,0.8,minecraft:iron_block;
+addDropItem,1,0.8,minecraft:iron_block;
+addDropItem,1,0.8,minecraft:iron_block;
+addDropItem,1,0.8,minecraft:iron_block;
+
+AddParts,caridge;
+	AddPartsRotationCenterAndRotationAmount,0,0,0,0,0,0;
+	RenderOnNormal;
+	AddPartsOnADSOffsetAndRotation,0,0,0,0,0,0;
+	AddPartsOnRecoilOffsetAndRotation,0,0,0,0,0,0;
+	AddPartsOnCockOffsetAndRotation,0,0,0,0,0,0;
+	AddPartsOnReloadOffsetAndRotation,0,0,0,0,0,0;
+
+	AddChildParts,obj3;
+		TurretParts,0;
+		AddPartsRotationCenterAndRotationAmount,0,0,-0.1351,0,0,0;
+		RenderOnNormal;
+		AddPartsOnADSOffsetAndRotation,0,0,0,0,0,0;
+		AddPartsOnRecoilOffsetAndRotation,0,0,0,0,0,0;
+		AddPartsOnCockOffsetAndRotation,0,0,0,0,0,0;
+		AddPartsOnReloadOffsetAndRotation,0,0,0,0,0,0;
+		AddYawInfoKey,-360,0,0,0,0,-360,0        ,360,0,0,0,0,360,0;
+;
+		AddChildParts,Stationing;
+			TurretParts,0;
+			AddPartsRotationCenterAndRotationAmount,0,1.5537,-0.4419,0,0,0;
+			RenderOnNormal;
+			AddPartsOnADSOffsetAndRotation,0,0,0,0,0,0;
+			AddPartsOnRecoilOffsetAndRotation,0,0,0,0,0,0;
+			AddPartsOnCockOffsetAndRotation,0,0,0,0,0,0;
+			AddPartsOnReloadOffsetAndRotation,0,0,0,0,0,0;
+			AddPitchInfoKey,-360,0,0,0,-360,0,0        ,360,0,0,0,360,0,0;
+			AddChildParts,Barrel;
+				TurretParts,0;
+				AddPartsRotationCenterAndRotationAmount,0,0,0,0,0,0;
+				RenderOnNormal;
+				AddPartsOnADSOffsetAndRotation,0,0,0,0,0,0;
+				AddPartsOnRecoilOffsetAndRotation,0,0,0,0,0,0;
+				AddPartsOnCockOffsetAndRotation,0,0,0,0,0,0;
+				AddPartsOnReloadOffsetAndRotation,0,0,0,0,0,0;
+				AddReloadMotionKey,-1,0,0,0,0,0,0,		0,0,0,0,0,0,0;
+				AddReloadMotionKey,0,0,0,0,0,0,0,		2,0,0,-0.7,0,0,0;
+				AddReloadMotionKey,2,0,0,-0.7,0,0,0,		20,0,0,0,0,0,0;
+				AddReloadMotionKey,20,0,0,0,0,0,0,		200,0,0,0,0,0,0;
+			BackParts;
+		BackParts;
+
+SpawnByMob_Guerrilla,M59_155mm,2;
+End;

@@ -1,0 +1,238 @@
+Name,Z-10;
+modelName,WZ-10.mqo;
+modelName_texture,WZ-10.png;
+This_is_Heli;
+AirPreset,true;
+unitThrottle,0,-1,0.05;
+wingUnit,0,1,0;
+gravity,0.0049f;
+rotcenter,0,2.8,0;
+displayModernHud,true;
+dragfactor,0.0001;
+dragfactor_front,0.00001;
+dragfactor_ground,0.1;
+brakedragfactor,0;
+brakedragfactor_ground,0.9;
+yawspeed_taxing,10;
+slipresist_onground,0.2;
+slipresist,0.03;
+stability_roll,0;
+stability_roll_onGround,0;
+stability_motion,0.1;
+stability_motion2,0;
+motionRollResist,1000;
+bodyWeight,9100;
+speedfactor,0.049;
+turbine_torque,0.0017f;
+torque,0.001f;
+liftfactor,0.00;
+forced_rudder_effect,0.3;
+forced_rotmotion_reduceSpeed,0.05;
+yawspeed,0.005;
+rollspeed,0.006;
+pitchspeed,0.004;
+soundname,handmadevehicle:handmadevehicle.heli;
+soundpitch,1.5;
+off_road_followability,10;
+off_road_followability_roll,10;
+
+addDropItem,1,0.9,minecraft:iron_ingot;
+addDropItem,1,0.4,minecraft:redstone;
+addDropItem,1,0.4,minecraft:iron_ingot;
+addDropItem,1,0.8,minecraft:emerald;
+addDropItem,1,0.8,minecraft:emerald;
+addDropItem,1,0.8,minecraft:emerald;
+addDropItem,1,0.6,minecraft:iron_block;
+addDropItem,1,0.6,minecraft:iron_block;
+addDropItem,1,0.6,minecraft:iron_block;
+
+//AI;
+maxbank,10;
+minALT,30;
+cruiseALT,60;
+maxClimb,-10;
+maxDive,45;
+cruiseNoseDown,40;
+
+thirdPersonDistance,24;
+
+//武装追加;
+ParentWeapons_NUM,3;
+AllWeapons_NUM,5;
+autoflap,false;
+addParentWeapon,0,	Z-10-HardPoint,	1.281,		1.0875,	1.1760,1;
+addChildWeapon,0,	Z-10-HardPoint,	-1.281,		1.0875,	1.1760,0;
+addParentWeapon,1,	Z-10-HardPoint,	2.094,		1.0875,	1.1760,1;
+addChildWeapon,0,	Z-10-HardPoint,	-2.094,		1.0875,	1.1760,0;
+addParentWeapon,2,	M230_Chain_Gun,	0,		0.4,	-4.750,0;
+
+cargoSlotNum,1;
+
+SetCategory_SetCategoryNum,5;//pylon/inner-outer/salvo/turret
+SetCategory_SetTargetCategory,0;//パイロン独立
+SetWeapon_GroupNum,1;//管制は一つ
+SetWeapon_aimGroupTurrets,0,0,1,2,3;//パイロン全て
+SetWeapon_FireGroupTurrets,0,0,1,2,3;//照準可能なものは照準を行う
+SetWeapon_targetingGroupTurrets,0,0,1,2,3;//ロックオンは独立
+SetCategory_Set_fireFromReadyAim,false;//照準が終わってから発射
+SetCategory_Set_sequentiallyFire,true;//管制グループ内で分割射撃
+SetCategory_Set_fireInterval,10;//
+SetCategory_Set_perFireNum,1;//同時に射撃発起する管制グループ数
+SetCategory_Set_userSittingTurretID,-1;//ユーザーを砲塔に座らせない
+SetCategory_Set_name,Solo;
+
+SetCategory_SetTargetCategory,1;//内側パイロン
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0,0,1;//内側だけ
+SetWeapon_FireGroupTurrets,0,0,1;//
+SetWeapon_targetingGroupTurrets,0,0,1;//
+SetCategory_Set_fireFromReadyAim,false;//照準が終わってから発射
+SetCategory_Set_sequentiallyFire,false;//管制グループ内では斉射
+SetCategory_Set_fireInterval,0;//最大速度連射
+SetCategory_Set_perFireNum,1;//同時に射撃発起する管制グループ数
+SetCategory_Set_userSittingTurretID,-1;//ユーザーを砲塔に座らせない
+SetCategory_Set_name,Inner;
+
+SetCategory_SetTargetCategory,2;//外側パイロン
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0,2,3;//外側だけ
+SetWeapon_FireGroupTurrets,0,2,3;//
+SetWeapon_targetingGroupTurrets,0,2,3;//
+SetCategory_Set_fireFromReadyAim,false;//照準が終わってから発射
+SetCategory_Set_sequentiallyFire,false;//管制グループ内では斉射
+SetCategory_Set_fireInterval,0;//最大速度連射
+SetCategory_Set_perFireNum,1;//同時に射撃発起する管制グループ数
+SetCategory_Set_userSittingTurretID,-1;//ユーザーを砲塔に座らせない
+SetCategory_Set_name,Outer;
+
+SetCategory_SetTargetCategory,3;//全パイロン
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0,0,1,2,3;//全部
+SetWeapon_FireGroupTurrets,0,0,1,2,3;//
+SetWeapon_targetingGroupTurrets,0,0,1,2,3;//
+SetCategory_Set_fireFromReadyAim,false;//照準が終わってから発射
+SetCategory_Set_sequentiallyFire,false;//管制グループ内では斉射
+SetCategory_Set_fireInterval,0;//最大速度連射
+SetCategory_Set_perFireNum,1;//同時に射撃発起する管制グループ数
+SetCategory_Set_userSittingTurretID,-1;//ユーザーを砲塔に座らせない
+SetCategory_Set_name,salvo;
+
+SetCategory_SetTargetCategory,4;//タレット
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0,4;//
+SetWeapon_FireGroupTurrets,0,4;//
+SetWeapon_targetingGroupTurrets,0,4;//
+SetCategory_Set_fireFromReadyAim,false;//照準が終わってから発射
+SetCategory_Set_sequentiallyFire,false;//
+SetCategory_Set_fireInterval,0;//最大速度
+SetCategory_Set_perFireNum,1;//
+SetCategory_Set_userSittingTurretID,-1;//ユーザーを砲塔に座らせない
+SetCategory_Set_name,turret;
+
+
+
+camerapos,0,2.956,-1.948;
+//座席追加;
+SetUpSeat1_NUM,2;
+SetUpSeat2_AddSeat_Normal,0,	0,2.956,-1.853,true,false,false,0,-1;
+SetUpSeat4_AddSeat_AdditionalTurret,0,0,1,2,3;
+SetUpSeat2_AddSeat_Normal,1,	0,2.250,-3.5,true,true,false,4,-1;
+SetUpSeat3_AddSeat_Zoom,1,	0,1.062,-5.820,true,true,true,4,-1;
+
+userProtect_maxDamageLevel,0,16;
+userProtect_maxDamageLevel,1,16;
+
+
+
+AddParts,Body;
+	AddPartsRotationCenterAndRotationAmount,0,0,0,0,0,0;
+	RenderOnNormal;
+	SetAsNormalParts;
+
+	AddChildParts,Gear;
+		AddPartsRotationCenterAndRotationAmount,0,0,0,0,0,0;
+		RenderOnNormal;
+		SetAsNormalParts;
+	BackParts;
+
+	AddChildParts,wings;
+		AddPartsRotationCenterAndRotationAmount,0,0,0,0,0,0;
+		RenderOnNormal;
+		SetAsNormalParts;
+	BackParts;
+
+
+	AddChildParts,Rotater;
+		RenderOnNormal;
+		SetAsNormalParts;
+		AddPartsRotationCenterAndRotationAmount, 0, 5.0600, -0.2567 , 0,0,0;
+
+		IsPera,true;
+		AddPartsRenderAsTrackInf,0,0,0,0,2880,0;
+	BackParts;
+
+	AddChildParts,tail_rotater;
+		RenderOnNormal;
+		SetAsNormalParts;
+		AddPartsRotationCenterAndRotationAmount, 0, 3.413, -9.062 , 0,0,0;
+
+		IsPera,true;
+		AddPartsRenderAsTrackInf,0,0,0,5760,0,0;
+	BackParts;
+
+
+	AddChildParts,missile0;
+		SetAsNormalParts;
+		TurretParts,0;
+		isTurret_linkedGunMount;
+		AddPartsRotationCenterAndRotationAmount,0,0,0,0,0,0;
+		RenderOnNormal;
+	BackParts;
+
+	AddChildParts,missile1;
+		SetAsNormalParts;
+		TurretParts,1;
+		isTurret_linkedGunMount;
+		AddPartsRotationCenterAndRotationAmount,0,0,0,0,0,0;
+		RenderOnNormal;
+	BackParts;
+
+	AddChildParts,missile2;
+		SetAsNormalParts;
+		TurretParts,2;
+		isTurret_linkedGunMount;
+		AddPartsRotationCenterAndRotationAmount,0,0,0,0,0,0;
+		RenderOnNormal;
+	BackParts;
+
+	AddChildParts,missile3;
+		SetAsNormalParts;
+		TurretParts,3;
+		isTurret_linkedGunMount;
+		AddPartsRotationCenterAndRotationAmount,0,0,0,0,0,0;
+		RenderOnNormal;
+	BackParts;
+
+	AddChildParts,Turret;
+		SetAsNormalParts;
+		TurretParts,4;
+		isTurret_linkedGunMount;
+			AddPartsRotationCenterAndRotationAmount,0,0,4.750,0,0,0;
+		AddPartsRotationDefOffset,0,0,0,0,0,0;
+		AddYawInfoKey,-360,0,0,0,0,-360,0        ,360,0,0,0,0,360,0;
+		RenderOnNormal;
+
+		AddChildParts,Turret_Gun;
+			SetAsNormalParts;
+			TurretParts,4;
+			isTurret_linkedGunMount;
+			AddPartsRotationCenterAndRotationAmount,0,0.4,4.750,0,0,0;
+			AddPartsRotationDefOffset,0,0,0,0,0,0;
+			RenderOnNormal;
+			AddPitchInfoKey,-360,0,0,0,-360,0,0        ,360,0,0,0,360,0,0;
+		BackParts;
+	BackParts;
+
+BackParts;
+SpawnByMob_Guerrilla,Z-10,5;
+End;

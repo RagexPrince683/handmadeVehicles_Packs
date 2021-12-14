@@ -1,0 +1,43 @@
+var doorState = 0;
+var doorStatePrev = 0;
+function update_DoorState(insVehicle){
+	doorStatePrev = doorState;
+	if(insVehicle.riddenByEntities[6] != null || insVehicle.riddenByEntities[7] != null  || insVehicle.riddenByEntities[8] != null|| insVehicle.riddenByEntities[9] != null)doorState++;
+	else doorState --;
+
+	if(doorState>45)doorState=45;
+	else if(doorState<0)doorState = 0;
+	//print(doorState);
+}
+function render_DoorRU(insRender,insParts){
+	var partialTicks = Packages.handmadeguns.HandmadeGunsCore.smooth;
+//	print("" + partialTicks);
+	GL11 = org.lwjgl.opengl.GL11;
+	GL11.glTranslatef(-0.7864, 2.4437, 2.1589 );
+	GL11.glRotatef(-75 * (doorState * partialTicks + doorStatePrev * (1 - partialTicks))/45,0,0,1);
+	GL11.glTranslatef(0.7864, -2.4437, -2.1589 );
+}
+function render_DoorLU(insRender,insParts){
+	var partialTicks = Packages.handmadeguns.HandmadeGunsCore.smooth;
+//	print("" + partialTicks);
+	GL11 = org.lwjgl.opengl.GL11;
+	GL11.glTranslatef(1.0503, 2.4437, 2.1589 );
+	GL11.glRotatef(75 * (doorState * partialTicks + doorStatePrev * (1 - partialTicks))/45,0,0,1);
+	GL11.glTranslatef(-1.0503, -2.4437, -2.1589 );
+}
+function render_DoorRD(insRender,insParts){
+	var partialTicks = Packages.handmadeguns.HandmadeGunsCore.smooth;
+//	print("" + partialTicks);
+	GL11 = org.lwjgl.opengl.GL11;
+	GL11.glTranslatef(-0.7864, 1.1195, 2.1589 );
+	GL11.glRotatef(135 * (doorState * partialTicks + doorStatePrev * (1 - partialTicks))/45,0,0,1);
+	GL11.glTranslatef(0.7864, -1.1195, -2.1589 );
+}
+function render_DoorLD(insRender,insParts){
+	var partialTicks = Packages.handmadeguns.HandmadeGunsCore.smooth;
+//	print("" + partialTicks);
+	GL11 = org.lwjgl.opengl.GL11;
+	GL11.glTranslatef(1.0503, 1.1195, 2.1589 );
+	GL11.glRotatef(135 * (doorState * partialTicks + doorStatePrev * (1 - partialTicks))/45,0,0,1);
+	GL11.glTranslatef(-1.0503, -1.1195, -2.1589 );
+}

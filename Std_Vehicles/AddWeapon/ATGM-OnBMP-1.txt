@@ -1,0 +1,16 @@
+WeaponName,ATGM-OnBMP-1
+turretYawCenterpos,-0.2862,2.578,0.03520
+turretPitchCenterpos,-0.2862,2.578,0.03520
+onlyAim
+turretspeedY,6
+turretspeedP,6
+
+
+turretanglelimtYawMax,360
+turretanglelimtYawmin,-360
+
+turretanglelimtPitchMax,360
+turretanglelimtPitchmin,-360
+
+
+End

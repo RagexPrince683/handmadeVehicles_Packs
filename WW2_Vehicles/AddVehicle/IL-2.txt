@@ -1,0 +1,202 @@
+Name,IL-2;
+modelName,IL2.mqo;
+modelName_texture,IL2.png;
+wingUnit,0,362,4;
+rotcenter,0,1.8,0;
+powerPos_onGround,0,0,0;
+slipresist_onground,0.8;
+motionRollResist,-20;
+gravity,0.0098f;
+onground_pitch,11;
+health,250;
+throttle_gearDown,5;
+displayModernHud,false;
+speedfactor,0.065;
+turbine_torque,0.0006f;
+torque,0.0015f;
+dragfactor_front,0.000010;
+stability_motion,1.1;
+stability_motion2,0.0;
+stability_roll,0.005;
+rotmotion_reduceSpeed,0.02;
+liftfactor,0.015;
+flapliftfactor,0.00004;
+flapdragfactor,0.00001;
+slipresist,0.18;
+brakedragfactor,0;
+brakedragfactor_ground,0.3;
+yawspeed,0.04;
+rollspeed,0.08;
+pitchspeed,0.022;
+yawspeed_taxing,40;
+off_road_followability,3;
+soundname,handmadevehicle:handmadevehicle.LiquidCoolEngineSound;
+soundpitch,1;
+bodyWeight,6055;
+//武装追加;
+ParentWeapons_NUM,7;
+AllWeapons_NUM,7;
+
+addParentWeapon,0,ShVAK-20,	2.726,1.330,-2.434,0;
+addParentWeapon,1,ShVAK-20,	-2.726,1.330,-2.434,0;
+addParentWeapon,2,ShKAS,	2.626,1.330,-2.434,0;
+addParentWeapon,3,ShKAS,	-2.626,1.330,-2.434,0;
+addParentWeapon,4,IL-2WeaponBay,0.7972,1.08,-0.4263,0;
+addParentWeapon,5,IL-2WeaponBay,-0.7972,1.08,-0.4263,0;
+addParentWeapon,6,UBS-12.7_IL-2Rear,	0,0,0,0;
+setInitialRotation,180,0;
+
+autoflap,false;
+boundingBoxSizeX,2;
+boundingBoxSizeY,2;
+
+maxbank,80;
+minALT,30;
+maxClimb,-20;
+cruiseALT,40;
+
+SetCategory_SetCategoryNum,3;
+SetCategory_SetTargetCategory,0;//20mm/7.62mm
+SetCategory_Set_name,Guns;
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0;
+SetWeapon_FireGroupTurrets,0,0,1,2,3;
+SetWeapon_targetingGroupTurrets,0;
+SetCategory_Set_fireFromReadyAim,false;
+SetCategory_Set_sequentiallyFire,false;
+SetCategory_Set_fireInterval,0;//最大速度連射
+SetCategory_Set_perFireNum,4;//同時に射撃発起する管制グループ数
+SetCategory_Set_userSittingTurretID,-1;//ユーザーを砲塔に座らせない
+
+SetCategory_SetTargetCategory,1;//WeaponBay
+SetCategory_Set_name,WeaponBay;
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0;
+SetWeapon_FireGroupTurrets,0,4,5;
+SetWeapon_targetingGroupTurrets,0;
+SetCategory_Set_fireFromReadyAim,false;
+SetCategory_Set_sequentiallyFire,true;
+SetCategory_Set_fireInterval,10;
+SetCategory_Set_perFireNum,1;
+SetCategory_Set_userSittingTurretID,-1;//ユーザーを砲塔に座らせない
+
+SetCategory_SetTargetCategory,2;//RearGun
+SetCategory_Set_name,RearGun;
+SetWeapon_GroupNum,1;
+SetWeapon_aimGroupTurrets,0,6;
+SetWeapon_FireGroupTurrets,0,6;
+SetWeapon_targetingGroupTurrets,0;
+SetCategory_Set_fireFromReadyAim,false;
+SetCategory_Set_sequentiallyFire,true;
+SetCategory_Set_fireInterval,0;
+SetCategory_Set_perFireNum,1;
+SetCategory_Set_userSittingTurretID,6;//ユーザーを砲塔に座らせる
+//座席追加;
+
+SetUpSeat1_NUM,2;
+SetUpSeat2_AddSeat_Normal,0,0,2.570,-0.7426,true,false,false,1,0;
+camerapos,0,2.570,-0.3;
+SetUpSeat2_AddSeat_Normal,1,0.04768,2.552,1.350,true,2,-1;
+
+userProtect_maxDamageLevel,0,12;
+
+wingVapourTrailPoint_num,2;
+wingVapourTrailPoint_set,0,7.131,1.645,0.2398;
+wingVapourTrailPoint_set,1,-7.131,1.645,0.2398;
+wingVapourTrailStart,0.08f;
+
+thirdPersonDistance,16;
+
+//top,bottom,front,back,left,right;
+boxes_withInfo,4,
+0,1.6,1,	0,0,0,	0.85,1.2,10,	1,0,0,0,	12,12,0,0,12,12,-1,
+0,1.3,0,	0,0,0,	14,0.4,2,	1,0,0,0,	3,3,50,50,50,50,-1,
+0,1.45,3.2,	0,0,0,	3.4,0.12,1.3,	1,0,0,0,	3,3,50,50,50,50,-1,
+0,1.87,3.4,	0,0,0,	0.03,1.4,1.4,	1,0,0,0,	3,3,50,50,50,50,-1;
+
+AddParts,Body;
+	AddPartsRotationCenterAndRotationAmount,0,0,0,0,0,0;
+	RenderOnNormal;
+	SetAsNormalParts;
+
+	AddChildParts,Cockpit;
+		AddPartsRotationCenterAndRotationAmount,0,0,0,0,0,0;
+		RenderOnNormal;
+		SetAsNormalParts;
+	BackParts;
+
+	AddChildParts,CockpitGlas;
+		AddPartsRotationCenterAndRotationAmount,0,0,0,0,0,0;
+		RenderOnNormal;
+		SetAsNormalParts;
+	BackParts;
+
+	AddChildParts,pera;
+		RenderOnNormal;
+		SetAsNormalParts;
+		AddPartsRotationCenterAndRotationAmount, 0, 1.6006, 0 , 0,0,0;
+
+		IsPera,true;
+		AddPartsRenderAsTrackInf,0,0,0,0,0,2880;
+	BackParts;
+
+
+	AddChildParts,sightPlate;
+		RenderOnNormal;
+		SetAsNormalParts;
+		reticleAndPlate;
+		AddReticleChildParts,sight;
+			RenderOnNormal;
+			SetAsNormalParts;
+		BackParts;
+	BackParts;
+
+	AddChildParts,Turret0;
+		TurretParts,6;
+		RenderOnNormal;
+		SetAsNormalParts;
+		AddPartsRotationCenterAndRotationAmount,0,2.2563,-1.1486,0,0,0;
+		AddYawInfoKey,-360,0,0,0,0,-360,0        ,360,0,0,0,0,360,0;
+
+		AddChildParts,Turret0Cannon;
+			TurretParts,6;
+			RenderOnNormal;
+			SetAsNormalParts;
+			AddPartsRotationCenterAndRotationAmount,0,2.4261,-0.9386,0,0,0;
+			AddPitchInfoKey,-360,0,0,0,-360,0,0        ,360,0,0,0,360,0,0;
+
+			AddChildParts,ReticlePlate0;
+				RenderOnNormal;
+				SetAsNormalParts;
+				reticleAndPlate;
+				AddReticleChildParts,Reticle0;
+					RenderOnNormal;
+					SetAsNormalParts;
+				BackParts;
+			BackParts;
+		BackParts;
+	BackParts;
+
+	AddChildParts,RearGear;
+		RenderOnNormal;
+		SetAsNormalParts;
+		AddPartsRotationCenterAndRotationAmount_TypeVector, 0, 0.9720, -2.983 , 1 , 0 , 0 , 0;
+		AddSomeMotion,-1,false       	,1,7;
+		AddSomeMotion,1,0,0,0,-120,0,0        	,100,0,0,0,0,0,0	,7;
+	BackParts;
+	AddChildParts,LGear;
+		RenderOnNormal;
+		SetAsNormalParts;
+		AddPartsRotationCenterAndRotationAmount_TypeVector, 1.639, 0.6685, -1.634, 0, 0, 1 , 0;
+		AddSomeMotion,-1,false       	,1,7;
+		AddSomeMotion,1,0,0,0,-80,0,0        	,100,0,0,0,0,0,0	,7;
+	BackParts;
+	AddChildParts,RGear;
+		RenderOnNormal;
+		SetAsNormalParts;
+		AddPartsRotationCenterAndRotationAmount_TypeVector, -1.639, 0.6685, -1.634, 0, 0, 1 , 0;
+		AddSomeMotion,-1,false       	,1,7;
+		AddSomeMotion,1,0,0,0,80,0,0        	,100,0,0,0,0,0,0	,7;
+	BackParts;
+BackParts;
+End;

@@ -1,0 +1,17 @@
+WeaponName,F-5A_Radar
+turretYawCenterpos,0,0,0
+turretPitchCenterpos,0,0,0
+onlyRadar
+turretspeedY,6
+turretspeedP,6
+
+
+turretanglelimtYawMax,20
+turretanglelimtYawmin,-20
+
+turretanglelimtPitchMax,20
+turretanglelimtPitchmin,-20
+
+Canlock,true
+seekerSize,30
+End

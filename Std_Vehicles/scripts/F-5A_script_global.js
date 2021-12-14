@@ -1,0 +1,61 @@
+
+function update_Pre(ins){
+}
+function update_Post(ins){
+	ins.script_local.invokeFunction("update_pilotSeat", ins.riddenByEntities[0]);
+}
+function Model_rendering(ins){
+}
+
+function GUI_rendering_3D(ins,vehicle){
+	return true;
+}
+function GUI_rendering_2D(ins,vehicle,width,height){
+
+	return false;
+}
+function GUI_rendering_HUD(ins,vehicle,width,height){
+	return true;
+}
+
+function ModelUpdate_Pre(insRender,insParts){
+	RenderVehicle = Packages.handmadevehicle.render.RenderVehicle;
+	var currentWeaponName = "";
+	var pilotMaingun = RenderVehicle.currentBaseLogic.seatObjects[0].mainWeapon[RenderVehicle.currentBaseLogic.seatObjects[0].currentWeaponMode];
+	if(pilotMaingun != null && pilotMaingun.getCriterionTurret() != null)currentWeaponName = pilotMaingun.getCriterionTurret().getName();
+	//print(currentWeaponName);
+	if(insParts.partsID == 30 && (currentWeaponName == "mk82" || currentWeaponName == "mk84")){
+		//print(insParts.partsID);
+		pipper(insRender,insParts,RenderVehicle.currentBaseLogic);
+	}
+	if(insParts.partsID == 31)RenderVehicle.currentBaseLogic.script_local.invokeFunction("update_canopy_First",insRender,insParts);
+	return false;
+}
+var ALT_setted = 60;
+function pipper(insRender,insParts,insVehicle){
+	GL11 = org.lwjgl.opengl.GL11;
+	Vector3d = javax.vecmath.Vector3d;
+	var motionvec = insVehicle.motionvec;
+	var positionVec = insVehicle.positionVec;
+	
+	var t = (motionvec.y + Math.sqrt(motionvec.y * motionvec.y + 2 * 0.00485 * (positionVec.y - ALT_setted)))/0.00485;
+	//print(t);
+	var pipperPos = new Vector3d(t * motionvec.x,positionVec.y - ALT_setted,t * motionvec.z);
+	//print(pipperPos);
+	if(pipperPos.length()>0.01){
+		pipperPos.scale(100/pipperPos.length());
+		GL11.glRotatef(-insVehicle.bodyrotationRoll,0,0,1);
+		GL11.glRotatef(-insVehicle.bodyrotationPitch,1,0,0);
+		GL11.glRotatef(insVehicle.bodyrotationYaw,0,1,0);
+		GL11.glTranslatef(pipperPos.x,-pipperPos.y,-100 + pipperPos.z);
+		//print(pipperPos);
+		GL11.glTranslatef(0,0,100);
+		GL11.glRotatef(-insVehicle.bodyrotationYaw,0,1,0);
+		GL11.glRotatef(insVehicle.bodyrotationPitch,1,0,0);
+		GL11.glRotatef(insVehicle.bodyrotationRoll,0,0,1);
+		GL11.glTranslatef(0,0,-100);
+	}
+}
+
+function ModelUpdate_Post(insRender,insParts){
+}
